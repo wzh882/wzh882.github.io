@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反击专用复刻</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafc;
+            color: #333;
+            padding-bottom: 100px;
+        }
+        
+        /* 引入本地字体 - 仅用于数字 */
+        @font-face {
+            font-family: 'DIN Condensed';
+            src: url('sz.ttf') format('woff2'),
+                 url('sz.ttf') format('truetype');
+            font-weight: bold;
+            font-display: swap;
+        }
+        
+        /* 应用数字字体到所有统计数字 */
+        #followsCount, #fansCount, #visitorsCount, #viewsCount,
+        #pointsText, .main7 .r2_left .item p:first-child {
+            font-family: 'DIN Condensed', Arial, sans-serif;
+            font-weight: bold;
+        }
+        
+        .main_up {
+            width: 100%;
+            height: 324px;
+            padding: 18px 20px 28px 19px;
+            background: url('img/1.png') no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+        }
+        
+        .main_t {
+            background: linear-gradient(to bottom, #fff, rgba(0,0,0,0));
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 25px;
+            cursor: pointer;
+        }
+        
+        .main1 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            z-index: 10;
+            margin-bottom: 75px;
+        }
+        
+        .main1 img {
+            width: 24px;
+            height: 24px;
+            margin-left: 21px;
+            cursor: pointer;
+        }
+        
+        .main2 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .main2 .m1 {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .main2 .m1 .big {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .main2 .m1 .size {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            right: 2.5px;
+            bottom: 2.5px;
+        }
+        
+        .main2 .m2 {
+            margin-left: 8px;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+        
+        .main2 .m3 {
+            width: 24px;
+            height: 24px;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+        
+        .main3 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .main3 button {
+            padding: 6px;
+            line-height: 1;
+            border-radius: 2px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            border: none;
+            background-color: #ccccca;
+            color: #5c5a5b;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .main3 button span {
+            font-size: 12px;
+            color: #5c5a5b;
+            font-weight: 600;
+            line-height: 1;
+        }
+        
+        .main3 button img {
+            width: 11px;
+            height: 11px;
+            margin-left: 6px;
+            line-height: 1;
+            display: block;
+        }
+        
+        .main3 .right {
+            clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%);
+            padding: 0 12px;
+            height: 25px;
+            background-color: rgba(0,0,0,.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            border-top-left-radius: 2.5px;
+            border-bottom-left-radius: 2.5px;
+            transform: translateX(20px);
+        }
+        
+        .main3 .right img {
+            width: 13px;
+            height: 13px;
+            margin-right: 6px;
+        }
+        
+        .main4 {
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        
+        .main5 {
+            display: flex;
+            align-items: flex-end;
+            color: #fff;
+        }
+        
+        .main5 .item {
+            font-size: 11px;
+            margin-right: 19px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        .main5 .item span {
+            font-size: 16px;
+            line-height: 1;
+            letter-spacing: -1px;
+            margin-right: 2.5px;
+        }
+        
+        .main_down {
+            background-color: #f0f0f0;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            transform: translateY(-10px);
+        }
+        
+        .main6 {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 12px 10px;
+            background-color: #f9fafc;
+            margin-bottom: 6px;
+            height: 110px;
+            align-content: space-between;
+            overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
+            gap: 0 5px;
+        }
+
+        .main6 .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            width: calc(20% - 5px);
+            height: 45px;
+            cursor: pointer;
+            box-sizing: border-box;
+            line-height: 1.3;
+        }
+
+        .main6 .item img {
+            height: 24px;
+            margin-bottom: 4px;
+            width: auto;
+            display: block;
+        }
+
+        .main7 {
+            padding: 14px 14px 14px 19px;
+            background-color: #f9fafc;
+            margin-bottom: 6px;
+        }
+        
+        .main7 .m1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .main7 .m1 .left {
+            font-size: 19px;
+            font-weight: 700;
+        }
+        
+        .main7 .m1 .right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ecf0f3;
+            padding: 0.5px;
+            font-size: 14px;
+        }
+        
+        .main7 .m1 .right span {
+            flex: 1;
+            padding: 6px 8px;
+            color: #54575e;
+            font-weight: 700;
+        }
+        
+        .main7 .m1 .right span:first-child {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        .main7 .m2 {
+            display: flex;
+            align-items: center;
+            margin-top: 19px;
+            margin-bottom: 11px;
+        }
+        
+        .main7 .m2 div {
+            padding: 8px 5px;
+            background-color: #ecf0f3;
+            color: #828689;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            margin-right: 9px;
+            border-radius: 2.5px;
+            cursor: pointer;
+        }
+        
+        .main7 .m2 img {
+            width: 10px;
+            margin: 0 2px 0 4px;
+        }
+        
+        .main7 .m3 {
+            display: flex;
+            align-items: center;
+        }
+        
+        .main7 .m3 .left {
+            margin-right: 12px;
+        }
+        
+        .main7 .m3 .left img {
+            width: 78px;
+            cursor: pointer;
+        }
+        
+        .main7 .m3 .right {
+            flex: 1;
+        }
+        
+        .main7 .r1 {
+            font-weight: 700;
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+        
+        .main7 .r2 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .main7 .r2_left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+        }
+        
+        .main7 .r2_left .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .main7 .r2_left p {
+            line-height: 1;
+        }
+        
+        .main7 .r2_left p:first-child {
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+        
+        .main7 .r2_left p:last-child {
+            font-size: 11px;
+            color: #828689;
+        }
+        
+        .main7 .r2_right {
+            width: 8px;
+            margin-left: 25px;
+            margin-right: 10px;
+        }
+        
+        .main7 .r2_right img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .main8 {
+            padding: 19px 19px 14px;
+            background-color: #f9fafc;
+            margin-bottom: 6px;
+        }
+        
+        .main8 .m1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .main8 .m1 .left {
+            font-size: 19px;
+            font-weight: 700;
+        }
+        
+        .main8 .m1 .right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 19px;
+        }
+        
+        .main8 .m1 .right img {
+            width: 11px;
+            cursor: pointer;
+        }
+        
+        .main8 .m1 .right img:last-child {
+            width: 8px;
+            margin-right: 7px;
+        }
+        
+        .main8 .m2 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            margin-bottom: 5px;
+            margin-top: 19px;
+            width: 100%;
+        }
+        
+        .main8 .m2 img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .main9 {
+            padding: 19px;
+            background-color: #f9fafc;
+            border-bottom: 1px solid #ccccca;
+        }
+        
+        .main9 .m1 {
+            display: flex;
+            align-items: center;
+        }
+        
+        .main9 .m1 div {
+            padding: 0 10px;
+            font-size: 19px;
+            color: #5c5a5b;
+            cursor: pointer;
+        }
+        
+        .main9 .m1 div:first-child {
+            font-weight: 700;
+            color: #000;
+            position: relative;
+        }
+        
+        .main9 .m1 div:first-child::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -7px;
+            background-color: #f6a20c;
+            width: 20px;
+            height: 5px;
+            border-radius: 1px;
+            transform: translateX(-50%);
+        }
+        
+        .main9 .m2 {
+            display: flex;
+            align-items: center;
+            margin: 24px 0;
+            color: #5c5a5b;
+            font-size: 15px;
+        }
+        
+        .main9 .m2 div {
+            background-color: #ecf0f3;
+            color: #000;
+            padding: 5px 10px;
+            margin-right: 25px;
+            cursor: pointer;
+        }
+        
+        .main9 .m3 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+        
+        .main9 .m3 .left {
+            width: 45px;
+            height: 45px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .main9 .m3 .left .big {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .main9 .m3 .left .size {
+            width: 11px;
+            height: 11px;
+            position: absolute;
+            right: 2px;
+            bottom: 2px;
+        }
+        
+        .main9 .m3 .right {
+            flex: 1;
+            margin-left: 15px;
+        }
+        
+        .main9 .m3 .r1 {
+            display: flex;
+            align-items: center;
+        }
+        
+        .main9 .m3 .name {
+            color: #000;
+            font-size: 16px;
+            line-height: 1;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .main9 .m3 .line {
+            color: #4285dc;
+            font-size: 12px;
+            padding-left: 10px;
+            position: relative;
+            line-height: 1;
+            cursor: pointer;
+        }
+        
+        .main9 .m3 .line::before {
+            content: "";
+            position: absolute;
+            left: 2.5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #4285dc;
+        }
+        
+        .main9 .m3 .r2 {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: space-between;
+            color: #828689;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+        
+        .main9 .m3 .r2 span {
+            padding-right: 5px;
+            cursor: pointer;
+        }
+        
+        .main9 .m4 {
+            color: #000;
+            font-size: 17px;
+            line-height: 1;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .main9 .m5 {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        
+        .main9 .m5 img {
+            width: 192px;
+            cursor: pointer;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .main9 .m6 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #828689;
+            font-size: 12px;
+        }
+        
+        .main9 .m6 .right {
+            display: flex;
+            align-items: center;
+            line-height: 1;
+        }
+        
+        .main9 .m6 img {
+            height: 15px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        
+        .main9 .right2 {
+            display: flex;
+            align-items: center;
+        }
+        
+        .tabbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+        }
+        
+        .tabbar .item {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            flex-direction: column;
+            padding: 8px 0 10px;
+            color: #828689;
+            font-size: 12px;
+        }
+        
+        .tabbar img {
+            width: 27px;
+            margin-bottom: 10px;
+        }
+
+        /* 选择面板样式 */
+        .selection-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .selection-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .selection-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .selection-item {
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .selection-item:hover {
+            transform: scale(1.05);
+        }
+
+        .selection-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .selection-item.active img {
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 2px #4CAF50;
+        }
+
+        .selection-item-name {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .selection-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .selection-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .confirm-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .confirm-btn:hover {
+            background-color: #45a049;
+        }
+
+        .cancel-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .cancel-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        /* 文本编辑面板 */
+        .text-edit-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-edit-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .text-edit-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .text-edit-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* 上传按钮样式 */
+        .upload-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .upload-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .upload-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .upload-preview {
+            max-width: 100px;
+            max-height: 100px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        /* 文件输入隐藏 */
+        .file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_up">
+        <div class="main_t" id="changeBackgroundBtn"></div>
+        <div class="main1">
+            <img src="img/43.png" alt="">
+            <img src="img/55.png" alt="">
+        </div>
+        <div class="main2">
+            <div class="m1" id="changeAvatarBtn">
+                <img src="img/41.png" class="big" id="avatarImg" alt="" onclick="return avatarImg_onclick()">
+                <img src="img/42.png" class="size" alt="">
+            </div>
+            <div class="m2" id="usernameText">西江模拟器</div>
+            <img src="img/44.png" class="m3" alt="" id="editUsernameBtn">
+        </div>
+        <div class="main3">
+            <button id="levelText">Lv. <span>26</span> <img src="img/53.png" alt=""></button>
+            <div class="right">
+                <img src="img/45.png" alt="">
+                <span id="pointsText">999</span>
+            </div>
+        </div>
+        <div class="main4" id="bioText">像我这样的特种兵，是不会轻易透露自己的资料der</div>
+        <div class="main5">
+            <div class="item" id="followsItem"><span id="followsCount">0</span> 关注</div>
+            <div class="item" id="fansItem"><span id="fansCount">11</span> 粉丝</div>
+            <div class="item" id="visitorsItem"><span id="visitorsCount">91</span> 访客</div>
+            <div class="item" id="viewsItem"><span id="viewsCount">1333</span> 阅读量</div>
+        </div>
+    </div>
+    
+    <div class="main_down">
+        <div class="main6">
+            <div class="item"><img src="img/37.png" alt="">收藏</div>
+            <div class="item"><img src="img/38.png" alt="">最近预览</div>
+            <div class="item"><img src="img/39.png" alt="">身份认证</div>
+            <div class="item"><img src="img/40.png" alt="">钱包</div>
+            <div class="item"><img src="img/60.png" alt="">背包</div>
+            <div class="item"><img src="img/61.png" alt="">游戏商城</div>
+            <div class="item"><img src="img/62.png" alt="">我的订单</div>
+            <div class="item"><img src="img/63.png" alt="">点券充值</div>
+            <div class="item"><img src="img/64.png" alt="">大众赛事</div>
+        </div>
+    </div>
+    
+    <div class="main7">
+        <div class="m1">
+            <div class="left">游戏名片</div>
+            <div class="right">
+                <span>当前</span>
+                <span>累计</span>
+            </div>
+        </div>
+        <div class="m2">
+            <div id="gameName">西江科技(手Q安卓)</div>
+            <div id="gameMode">第三人称-四排 <img src="img/52.png" alt=""></div>
+        </div>
+        <div class="m3">
+            <div class="left"><img src="img/36.png" alt="" id="rankImg"></div>
+            <div class="right">
+                <div class="r1" id="rankText">超级王牌53星</div>
+                <div class="r2">
+                    <div class="r2_left">
+                        <div class="item">
+                            <p id="matchesCount">50</p>
+                            <p>场次</p>
+                        </div>
+                        <div class="item">
+                            <p id="winsCount">50</p>
+                            <p>胜场</p>
+                        </div>
+                        <div class="item">
+                            <p id="top10Count">50</p>
+                            <p>前十</p>
+                        </div>
+                        <div class="item">
+                            <p id="kdRatio">50</p>
+                            <p>K/D</p>
+                        </div>
+                    </div>
+                    <div class="r2_right">
+                        <img src="img/53.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main8">
+        <div class="m1">
+            <div class="left">我的橱窗</div>
+            <div class="right">
+                <img src="img/51.png" alt="" id="addGalleryItemBtn">
+                <img src="img/53.png" alt="">
+            </div>
+        </div>
+        <div class="m2" id="galleryContainer">
+            <img src="1/1.png" alt="" class="gallery-img">
+            <img src="1/2.png" alt="" class="gallery-img">
+            <img src="1/3.png" alt="" class="gallery-img">
+            <img src="1/4.png" alt="" class="gallery-img">
+            <img src="1/5.png" alt="" class="gallery-img">
+        </div>
+    </div>
+    
+    <div class="main9">
+        <div class="m1">
+            <div>动态</div>
+            <div>精彩时刻</div>
+        </div>
+        <div class="m2">
+            <div>全部</div>
+            <div>动态相册</div>
+        </div>
+        <div class="m3">
+            <div class="left">
+                <img src="img/41.png" class="big" alt="" id="postAvatarImg">
+                <img src="img/42.png" class="size" alt="">
+            </div>
+            <div class="right">
+                <div class="r1">
+                    <div class="name" id="postUsername">西江科技</div>
+                    <div class="line">营地在线</div>
+                </div>
+                <div class="r2">
+                    <div class="r2_left">
+                        <span id="postGameName">西江科技</span>
+                        <span id="postTime">23小时前</span>
+                    </div>
+                    <div class="r2_right">
+                        <span id="postViews">1</span>阅读
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m4" id="postContent">点击修改</div>
+        <div class="m5" id="postImages">
+            <img src="dt/1.png" alt="" id="postImage">
+        </div>
+        <div class="m6">
+            <div class="left">23小时前</div>
+            <div class="right">
+                <img src="img/56.png" alt="">
+                <img src="img/57.png" alt="">
+                <div class="right2">
+                    <img src="img/58.png" alt=""> <span id="likeCount">0</span>
+                </div>
+                <img src="img/59.png" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <div class="tabbar">
+        <div class="item"><img src="img/46.png" alt=""> 资讯</div>
+        <div class="item"><img src="img/47.png" alt=""> 好友</div>
+        <div class="item"><img src="img/48.png" alt=""> 社区</div>
+        <div class="item"><img src="img/49.png" alt=""> 战绩</div>
+        <div class="item"><img src="img/50.png" alt=""> 我</div>
+    </div>
+
+    <!-- 图片选择面板 -->
+    <div class="selection-panel" id="selectionPanel">
+        <div class="selection-content">
+            <div class="selection-title" id="selectionTitle">选择图片</div>
+            
+            <!-- 上传区域 -->
+            <div class="upload-container">
+                <label for="imageUpload" class="upload-btn">上传图片</label>
+                <input type="file" id="imageUpload" class="file-input" accept="image/*">
+                <img id="uploadPreview" class="upload-preview">
+            </div>
+            
+            <div class="selection-grid" id="selectionGrid">
+                <!-- 图片选项将通过JavaScript动态添加 -->
+            </div>
+            <div class="selection-buttons">
+                <button class="cancel-btn" id="cancelSelectionBtn">取消</button>
+                <button class="confirm-btn" id="confirmSelectionBtn">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 文本编辑面板 -->
+    <div class="text-edit-panel" id="textEditPanel">
+        <div class="text-edit-content">
+            <div class="text-edit-title" id="textEditTitle">编辑文本</div>
+            <input type="text" id="textEditInput" class="text-edit-input">
+            <div class="selection-buttons">
+                <button class="cancel-btn" id="cancelTextEditBtn">取消</button>
+                <button class="confirm-btn" id="confirmTextEditBtn">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 图片资源库
+        const imageLibrary = {
+            backgrounds: [
+                { id: 'background1', url: 'img/1.png', name: '背景1' },
+                { id: 'background2', url: 'dt/6.png', name: '背景2' },
+                { id: 'background3', url: 'dt/7.png', name: '背景3' }
+            ],
+            avatars: [
+                { id: 'avatar1', url: 'dt/5.png', name: '头像1' },
+                { id: 'avatar2', url: 'dt/4.png', name: '头像2' },
+                { id: 'avatar3', url: 'dt/3.png', name: '头像3' }
+            ],
+            ranks: [
+                { id: 'rank1', url: 'img/36.png', name: '超级王牌' },
+                { id: 'rank2', url: 'img/36.5.png', name: '超级王牌' },
+                { id: 'rank3', url: 'img/37.5.png', name: '荣耀皇冠 I' },
+                { id: 'rank4', url: 'img/37.6.png', name: '热血青铜' },
+            ],
+            gallery: [
+                { id: 'gallery1', url: '1/1.png', name: '皮肤' },
+                { id: 'gallery2', url: '1/2.png', name: '皮肤' },
+                { id: 'gallery3', url: '1/3.png', name: '皮肤' },
+                { id: 'gallery4', url: '1/4.png', name: '皮肤' },
+                { id: 'gallery5', url: '1/5.png', name: '皮肤' },
+                { id: 'gallery6', url: '1/6.png', name: '皮肤' },
+                { id: 'gallery7', url: '1/7.png', name: '皮肤' },
+    { id: 'gallery8', url: '1/8.png', name: '皮肤' },
+    { id: 'gallery9', url: '1/9.png', name: '皮肤' },
+    { id: 'gallery10', url: '1/10.png', name: '皮肤' },
+    { id: 'gallery11', url: '1/11.png', name: '皮肤' },
+    { id: 'gallery12', url: '1/12.png', name: '皮肤' },
+    { id: 'gallery13', url: '1/13.png', name: '皮肤' },
+    { id: 'gallery14', url: '1/14.png', name: '皮肤' },
+    { id: 'gallery15', url: '1/15.png', name: '皮肤' },
+    { id: 'gallery16', url: '1/16.png', name: '皮肤' },
+    { id: 'gallery17', url: '1/17.png', name: '皮肤' },
+    { id: 'gallery18', url: '1/18.png', name: '皮肤' },
+    { id: 'gallery19', url: '1/19.png', name: '皮肤' },
+    { id: 'gallery20', url: '1/20.png', name: '皮肤' },
+    { id: 'gallery21', url: '1/21.png', name: '皮肤' },
+    { id: 'gallery22', url: '1/22.png', name: '皮肤' },
+    { id: 'gallery23', url: '1/23.png', name: '皮肤' },
+    { id: 'gallery24', url: '1/24.png', name: '皮肤' },
+    { id: 'gallery25', url: '1/25.png', name: '皮肤' },
+    { id: 'gallery26', url: '1/26.png', name: '皮肤' },
+    { id: 'gallery27', url: '1/27.png', name: '皮肤' },
+    { id: 'gallery28', url: '1/28.png', name: '皮肤' },
+    { id: 'gallery29', url: '1/29.png', name: '皮肤' },
+    { id: 'gallery30', url: '1/30.png', name: '皮肤' },
+    { id: 'gallery31', url: '1/31.png', name: '皮肤' },
+    { id: 'gallery32', url: '1/32.png', name: '皮肤' },
+    { id: 'gallery33', url: '1/33.png', name: '皮肤' },
+    { id: 'gallery34', url: '1/34.png', name: '皮肤' },
+    { id: 'gallery35', url: '1/35.png', name: '皮肤' },
+    { id: 'gallery36', url: '1/36.png', name: '皮肤' },
+    { id: 'gallery37', url: '1/37.png', name: '皮肤' },
+    { id: 'gallery38', url: '1/38.png', name: '皮肤' },
+    { id: 'gallery39', url: '1/39.png', name: '皮肤' },
+    { id: 'gallery41', url: '1/41.png', name: '皮肤' },
+    { id: 'gallery42', url: '1/42.png', name: '皮肤' },
+    { id: 'gallery43', url: '1/43.png', name: '皮肤' },
+    { id: 'gallery44', url: '1/44.png', name: '皮肤' },
+    { id: 'gallery45', url: '1/45.png', name: '皮肤' },
+    { id: 'gallery46', url: '1/46.png', name: '皮肤' },
+    { id: 'gallery47', url: '1/47.png', name: '皮肤' },
+    { id: 'gallery48', url: '1/48.png', name: '皮肤' },
+    { id: 'gallery49', url: '1/49.png', name: '皮肤' },
+    { id: 'gallery40', url: '1/40.png', name: '皮肤' },
+
+                
+            ],
+            posts: [
+                { id: 'post1', url: 'dt/1.png', name: '动态图片1' },
+                { id: 'post2', url: 'dt/2.png', name: '动态图片2' },
+                { id: 'post3', url: 'dt/8.png', name: '动态图片3' },
+                { id: 'post4', url: 'dt/9.png', name: '动态图片4' },
+            ]
+        };
+
+        // 当前编辑状态
+        let currentEditState = {
+            type: null,      // 编辑类型: 'background', 'avatar', 'rank', 'gallery', 'post'
+            element: null,   // 要修改的DOM元素
+            selected: null   // 当前选中的图片ID
+        };
+
+        // DOM元素
+        const selectionPanel = document.getElementById('selectionPanel');
+        const selectionTitle = document.getElementById('selectionTitle');
+        const selectionGrid = document.getElementById('selectionGrid');
+        const confirmSelectionBtn = document.getElementById('confirmSelectionBtn');
+        const cancelSelectionBtn = document.getElementById('cancelSelectionBtn');
+        
+        const textEditPanel = document.getElementById('textEditPanel');
+        const textEditTitle = document.getElementById('textEditTitle');
+        const textEditInput = document.getElementById('textEditInput');
+        const confirmTextEditBtn = document.getElementById('confirmTextEditBtn');
+        const cancelTextEditBtn = document.getElementById('cancelTextEditBtn');
+        
+        const imageUpload = document.getElementById('imageUpload');
+        const uploadPreview = document.getElementById('uploadPreview');
+
+        // 初始化所有可编辑元素的点击事件
+        function initEditableElements() {
+            // 个人信息部分
+            document.getElementById('editUsernameBtn').addEventListener('click', () => showTextEdit('usernameText', '编辑用户名'));
+            document.getElementById('bioText').addEventListener('click', () => showTextEdit('bioText', '编辑个人简介'));
+            document.getElementById('levelText').addEventListener('click', () => showTextEdit('levelText', '编辑等级'));
+            document.getElementById('pointsText').addEventListener('click', () => showTextEdit('pointsText', '编辑积分'));
+            
+            // 统计数据
+            document.getElementById('followsCount').addEventListener('click', () => showTextEdit('followsCount', '编辑关注数'));
+            document.getElementById('fansCount').addEventListener('click', () => showTextEdit('fansCount', '编辑粉丝数'));
+            document.getElementById('visitorsCount').addEventListener('click', () => showTextEdit('visitorsCount', '编辑访客数'));
+            document.getElementById('viewsCount').addEventListener('click', () => showTextEdit('viewsCount', '编辑阅读量'));
+            
+            // 游戏数据
+            document.getElementById('gameName').addEventListener('click', () => showTextEdit('gameName', '编辑游戏名称'));
+            document.getElementById('gameMode').addEventListener('click', () => showTextEdit('gameMode', '编辑游戏模式'));
+            document.getElementById('rankText').addEventListener('click', () => showTextEdit('rankText', '编辑段位'));
+            document.getElementById('matchesCount').addEventListener('click', () => showTextEdit('matchesCount', '编辑场次'));
+            document.getElementById('winsCount').addEventListener('click', () => showTextEdit('winsCount', '编辑胜场'));
+            document.getElementById('top10Count').addEventListener('click', () => showTextEdit('top10Count', '编辑前十次数'));
+            document.getElementById('kdRatio').addEventListener('click', () => showTextEdit('kdRatio', '编辑K/D'));
+            
+            // 动态内容
+            document.getElementById('postUsername').addEventListener('click', () => showTextEdit('postUsername', '编辑用户名'));
+            document.getElementById('postGameName').addEventListener('click', () => showTextEdit('postGameName', '编辑游戏名称'));
+            document.getElementById('postContent').addEventListener('click', () => showTextEdit('postContent', '编辑动态内容'));
+            document.getElementById('postViews').addEventListener('click', () => showTextEdit('postViews', '编辑阅读数'));
+            document.getElementById('likeCount').addEventListener('click', () => showTextEdit('likeCount', '编辑点赞数'));
+            
+            // 图片编辑
+            document.getElementById('changeBackgroundBtn').addEventListener('click', () => showImageSelection('background', '选择背景图片'));
+            document.getElementById('changeAvatarBtn').addEventListener('click', () => showImageSelection('avatar', '选择头像'));
+            document.getElementById('rankImg').addEventListener('click', () => showImageSelection('rank', '选择段位图标'));
+            document.getElementById('addGalleryItemBtn').addEventListener('click', () => showImageSelection('gallery-add', '添加橱窗图片'));
+            document.getElementById('postAvatarImg').addEventListener('click', () => showImageSelection('avatar', '选择动态头像'));
+            document.getElementById('postImage').addEventListener('click', () => showImageSelection('post', '选择动态图片'));
+            
+            // 橱窗图片点击事件
+            document.querySelectorAll('.gallery-img').forEach(img => {
+                img.addEventListener('click', function() {
+                    currentEditState.element = img;
+                    showImageSelection('gallery-edit', '更换橱窗图片');
+                });
+            });
+        }
+
+        // 显示图片选择面板
+        function showImageSelection(type, title) {
+            currentEditState.type = type;
+            currentEditState.selected = null;
+            
+            // 重置上传预览
+            uploadPreview.style.display = 'none';
+            imageUpload.value = '';
+            
+            selectionTitle.textContent = title;
+            selectionGrid.innerHTML = '';
+            
+            const images = getCurrentImageLibrary(type);
+            
+            images.forEach(img => {
+                const item = document.createElement('div');
+                item.className = 'selection-item';
+                item.innerHTML = `
+                    <img src="http://cs.t60.top/hpjy/${img.url}" alt="${img.name}" data-id="${img.id}">
+                    <div class="selection-item-name">${img.name}</div>
+                `;
+                selectionGrid.appendChild(item);
+                
+                item.addEventListener('click', function() {
+                    document.querySelectorAll('.selection-item').forEach(i => {
+                        i.classList.remove('active');
+                    });
+                    item.classList.add('active');
+                    currentEditState.selected = img.id;
+                });
+            });
+            
+            selectionPanel.style.display = 'flex';
+        }
+
+        // 根据类型获取对应的图片库
+        function getCurrentImageLibrary(type) {
+            switch(type) {
+                case 'background': return imageLibrary.backgrounds;
+                case 'avatar': return imageLibrary.avatars;
+                case 'rank': return imageLibrary.ranks;
+                case 'gallery':
+                case 'gallery-add':
+                case 'gallery-edit': 
+                    return imageLibrary.gallery;
+                case 'post': return imageLibrary.posts;
+                default: return [];
+            }
+        }
+
+        // 显示文本编辑面板
+        function showTextEdit(elementId, title) {
+            const element = document.getElementById(elementId);
+            textEditTitle.textContent = title;
+            
+            // 兼容不同元素类型
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                textEditInput.value = element.value;
+            } else {
+                // 处理包含子元素的文本内容（如levelText中的<span>）
+                if (elementId === 'levelText') {
+                    textEditInput.value = element.querySelector('span').textContent;
+                } else {
+                    textEditInput.value = element.textContent || element.innerText;
+                }
+            }
+            
+            currentEditState.element = element;
+            textEditPanel.style.display = 'flex';
+            textEditInput.focus();
+        }
+
+        // 初始化图片上传功能
+        function initImageUpload() {
+            imageUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(event) {
+                        uploadPreview.src = event.target.result;
+                        uploadPreview.style.display = 'block';
+                        
+                        // 创建临时ID用于上传的图片
+                        currentEditState.selected = 'uploaded-' + Date.now();
+                        
+                        // 添加到当前选择的图片列表中
+                        const uploadedImage = {
+                            id: currentEditState.selected,
+                            url: event.target.result,
+                            name: '上传的图片'
+                        };
+                        
+                        // 根据当前编辑类型添加到对应的分类
+                        switch(currentEditState.type) {
+                            case 'background':
+                                imageLibrary.backgrounds.unshift(uploadedImage);
+                                break;
+                            case 'avatar':
+                                imageLibrary.avatars.unshift(uploadedImage);
+                                break;
+                            case 'post':
+                                imageLibrary.posts.unshift(uploadedImage);
+                                break;
+                            case 'gallery':
+                            case 'gallery-add':
+                            case 'gallery-edit':
+                                imageLibrary.gallery.unshift(uploadedImage);
+                                break;
+                        }
+                        
+                        // 重新加载选择面板
+                        showImageSelection(currentEditState.type, selectionTitle.textContent);
+                        
+                        // 自动选中上传的图片
+                        setTimeout(() => {
+                            const newItem = document.querySelector(`.selection-item img[data-id="${currentEditState.selected}"]`);
+                            if (newItem) {
+                                newItem.closest('.selection-item').classList.add('active');
+                            }
+                        }, 100);
+                    };
+                    
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // 初始化事件监听
+        function initEventListeners() {
+            // 确认图片选择
+            confirmSelectionBtn.addEventListener('click', function() {
+                if (currentEditState.selected) {
+                    let selectedImg;
+                    
+                    // 检查是否是上传的图片
+                    if (currentEditState.selected.startsWith('uploaded-')) {
+                        selectedImg = getCurrentImageLibrary(currentEditState.type)
+                            .find(img => img.id === currentEditState.selected);
+                    } else {
+                        selectedImg = findImageById(currentEditState.selected);
+                    }
+                    
+                    if (selectedImg) {
+                        switch (currentEditState.type) {
+                            case 'background':
+                                document.querySelector('.main_up').style.backgroundImage = `url('${selectedImg.url}')`;
+                                break;
+                            case 'avatar':
+                                document.getElementById('avatarImg').src = selectedImg.url;
+                                document.getElementById('postAvatarImg').src = selectedImg.url;
+                                break;
+                            case 'rank':
+                                document.getElementById('rankImg').src = selectedImg.url;
+                                break;
+                            case 'gallery-add':
+                                const newImg = document.createElement('img');
+                                newImg.src = selectedImg.url;
+                                newImg.className = 'gallery-img';
+                                newImg.alt = '橱窗图片';
+                                document.getElementById('galleryContainer').appendChild(newImg);
+                                
+                                newImg.addEventListener('click', function() {
+                                    currentEditState.element = newImg;
+                                    showImageSelection('gallery-edit', '更换橱窗图片');
+                                });
+                                break;
+                            case 'gallery-edit':
+                                currentEditState.element.src = selectedImg.url;
+                                break;
+                            case 'post':
+                                document.getElementById('postImage').src = selectedImg.url;
+                                break;
+                        }
+                    }
+                }
+                
+                selectionPanel.style.display = 'none';
+            });
+
+            // 取消图片选择
+            cancelSelectionBtn.addEventListener('click', function() {
+                selectionPanel.style.display = 'none';
+            });
+
+            // 确认文本编辑
+            confirmTextEditBtn.addEventListener('click', function() {
+                const element = currentEditState.element;
+                const newValue = textEditInput.value;
+                
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.value = newValue;
+                } else {
+                    // 特殊处理levelText中的<span>
+                    if (element.id === 'levelText') {
+                        element.querySelector('span').textContent = newValue;
+                    } else {
+                        element.textContent = newValue;
+                    }
+                }
+                
+                textEditPanel.style.display = 'none';
+            });
+
+            // 取消文本编辑
+            cancelTextEditBtn.addEventListener('click', function() {
+                textEditPanel.style.display = 'none';
+            });
+        }
+
+        // 根据ID查找图片
+        function findImageById(id) {
+            for (const category in imageLibrary) {
+                const found = imageLibrary[category].find(img => img.id === id);
+                if (found) return found;
+            }
+            return null;
+        }
+
+        // 页面加载完成后初始化
+        window.addEventListener('DOMContentLoaded', function() {
+            initEditableElements();
+            initImageUpload();
+            initEventListeners();
+        });
+   const found = imageLibrary[category].find(img => img.id === id);
+                if (found) return found;
+            }
+            return null;
+        }
+
+        // 页面加载完成后初始化
+        window.addEventListener('DOMContentLoaded', function() {
+            initEditableElements();
+            initImageUpload();
+            initEventListeners();
+        });
+    function avatarImg_onclick() {
+
+}
+
+    </script>
+</body>
+
+    

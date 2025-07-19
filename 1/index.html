@@ -1,9 +1,91 @@
+<!-- 卡密验证弹窗（放在原有源码的 </body> 前面） -->
+<div id="kmiPopup" class="popup-bg">
+  <div class="popup-box">
+    <h2>卡密验证</h2>
+    <input type="text" id="kmiInput" placeholder="请输入卡密" />
+    <button id="kmiVerify">验证</button>
+  </div>
+</div>
+
+<style>
+/* 弹窗背景（遮罩层） */
+.popup-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* 弹窗盒子 */
+.popup-box {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.popup-box h2 {
+  margin: 0 0 20px;
+  color: #333;
+  font-size: 18px;
+}
+
+.popup-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.popup-box button {
+  width: 100%;
+  padding: 12px;
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.popup-box button:hover {
+  background: #005a9e;
+}
+</style>
+
+<script>
+document.getElementById('kmiVerify').addEventListener('click', function() {
+  const inputKmi = document.getElementById('kmiInput').value.trim();
+  
+  // 正确卡密已修改为“王子涵nb”
+  if (inputKmi === '王子涵nb') {
+    alert('验证通过！');
+    document.getElementById('kmiPopup').style.display = 'none';
+  } else {
+    alert('卡密错误，请重新输入！');
+    document.getElementById('kmiInput').value = '';
+  }
+});
+</script>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>西江模拟器</title>
+    <title>反击</title>
     <style>
         * {
             margin: 0;
@@ -826,7 +908,7 @@
                 <img src="img/41.png" class="big" id="avatarImg" alt="">
                 <img src="img/42.png" class="size" alt="">
             </div>
-            <div class="m2" id="usernameText">西江模拟器</div>
+            <div class="m2" id="usernameText">反击</div>
             <img src="img/44.png" class="m3" alt="" id="editUsernameBtn">
         </div>
         <div class="main3">
@@ -868,13 +950,13 @@
             </div>
         </div>
         <div class="m2">
-            <div id="gameName">西江科技(手Q安卓)</div>
+            <div id="gameName">反击(苹果手Q)</div>
             <div id="gameMode">第三人称-四排 <img src="img/52.png" alt=""></div>
         </div>
         <div class="m3">
             <div class="left"><img src="img/36.png" alt="" id="rankImg"></div>
             <div class="right">
-                <div class="r1" id="rankText">超级王牌53星</div>
+                <div class="r1" id="rankText">超级王牌30星</div>
                 <div class="r2">
                     <div class="r2_left">
                         <div class="item">
@@ -940,7 +1022,7 @@
                 </div>
                 <div class="r2">
                     <div class="r2_left">
-                        <span id="postGameName">西江科技</span>
+                        <span id="postGameName">反击</span>
                         <span id="postTime">23小时前</span>
                     </div>
                     <div class="r2_right">
@@ -954,7 +1036,7 @@
             <img src="dt/1.png" alt="" id="postImage">
         </div>
         <div class="m6">
-            <div class="left">23小时前</div>
+            <div class="left">5分钟前</div>
             <div class="right">
                 <img src="img/56.png" alt="">
                 <img src="img/57.png" alt="">
